@@ -37,7 +37,7 @@ public class test {
     
     private static List<TreeNode> generateTrees(int s, int e) {
         List<TreeNode> result = new ArrayList<>();
-        //为何这里要加一个null?
+        //为何这里要加一个null? 因为不加null的话就不会进入到最下面的两个for循环，那么就不会有root，递归回来就全为空
         if (s > e) {
             result.add(null);
             return result;
@@ -49,15 +49,15 @@ public class test {
                       
             //这里的逻辑研究一下
             for (TreeNode leftNode : leftSub) {
-            	System.out.println("left");
+            	//System.out.println("left");
                 for (TreeNode rightNode : rightSub) {
-                	System.out.print("right  ");
+                	//System.out.print("right  ");
                     TreeNode root = new TreeNode(i);
                     root.left = leftNode;
                     root.right = rightNode;
                     result.add(root);
                 }
-                System.out.println("");
+                //System.out.println("");
             }
         	
         }

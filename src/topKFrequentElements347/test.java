@@ -22,7 +22,7 @@ public class test {
 		List<Integer>[] bucket = new ArrayList[nums.length+1];
 		for(int key : frequencyMap.keySet()) {
 			int frequency = frequencyMap.get(key);
-			//建立List数组的时候，一定要注意里面的子元素开始都是非空的，所以要进行null检查判断
+			//建立List数组的时候，一定要注意里面的子元素开始都是空的，所以要进行null检查判断
 			if(bucket[frequency] == null) {
 				bucket[frequency] = new ArrayList<>();			
 			}
